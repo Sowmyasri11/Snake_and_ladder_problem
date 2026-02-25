@@ -8,6 +8,7 @@ public class Main {
             System.out.println("\n===== SNAKE & LADDER GAME MENU =====");
             System.out.println("1. Roll a Dice");
             System.out.println("2. Demonstrate Single Move");
+            System.out.println("3. Play Until Reaching 100");
             System.out.println("8. EXIT");
 
             int choice = sc.nextInt();
@@ -19,6 +20,14 @@ public class Main {
                 case 2:
                     SnakeAndLadder.singleMoveUseCase();
                     break;
+
+                case 3:
+                    SnakeAndLadder.reachHundredUseCase();
+                    break;
+                case 8:
+                    System.out.println("Exiting....");
+                    return;
+
                 default:
                     System.out.println("Invalid choice");
             }

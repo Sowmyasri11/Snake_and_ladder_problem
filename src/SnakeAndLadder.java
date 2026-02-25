@@ -1,9 +1,13 @@
 public class SnakeAndLadder {
     static final int NO_PLAY = 0, LADDER = 1, SNAKE = 2;
-    public static void displayDiceRoll(){
+
+    public static void displayDiceRoll()
+    {
+
         System.out.println("Dice rolled: "+rollDice());
     }
-    public static int rollDice() {
+    public static int rollDice()
+    {
         return (int) (Math.random() * 6) + 1;
     }
     public static void singleMoveUseCase(){
@@ -24,7 +28,21 @@ public class SnakeAndLadder {
 
         return position;
     }
-    public static int getGameOption() {
+    public static int getGameOption()
+    {
         return (int) (Math.random() * 3);
     }
+
+    public static void reachHundredUseCase(){
+
+        int position = 0;
+        while(position < 100){
+            int dice = rollDice();
+            int option =getGameOption();
+            position =updatePlayerPosition(position,dice,option);
+        }
+        System.out.println("Player reached 100!");
+
+    }
+
 }
