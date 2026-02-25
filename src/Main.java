@@ -12,6 +12,7 @@ public class Main {
             System.out.println("4. Play Until Exact 100");
             System.out.println("5. Track Dice Rolls Until Win");
             System.out.println("6. Play Two Player Match");
+            System.out.println("7. Play Full Game with Stats");
             System.out.println("8. EXIT");
 
             int choice = sc.nextInt();
@@ -36,6 +37,10 @@ public class Main {
                 case 6:
                     SnakeAndLadder.twoPlayerGameUseCase();
                     break;
+                case 7:
+                    SnakeAndLadder.fullGameStatsUseCase();
+                    break;
+
                 case 8:
                     System.out.println("Exiting....");
                     return;

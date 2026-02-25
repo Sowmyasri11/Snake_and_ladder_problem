@@ -103,5 +103,33 @@ public class SnakeAndLadder {
         }
         System.out.println(p1 == 100 ? "Player 1 Wins!" : "Player 2 Wins!");
     }
+    public static void fullGameStatsUseCase() {
+        int p1 = 0, p2 = 0, turn = 1;
+        int count1 = 0, count2 = 0;
+
+        while (p1 != 100 && p2 != 100) {
+            int dice = rollDice();
+            int option = getGameOption();
+
+            if (turn == 1) {
+                count1++;
+                int old = p1;
+                p1 = updatePlayerPosition(p1, dice, option);
+                if (p1 > 100) p1 = old;
+                if (option != LADDER) turn = 2;
+            } else {
+                count2++;
+                int old = p2;
+                p2 = updatePlayerPosition(p2, dice, option);
+                if (p2 > 100) p2 = old;
+                if (option != LADDER) turn = 1;
+            }
+        }
+
+        System.out.println("Player 1 Dice Rolls: " + count1);
+        System.out.println("Player 2 Dice Rolls: " + count2);
+        System.out.println(p1 == 100 ? "Winner: Player 1" : "Winner: Player 2");
+    }
+
 
 }
