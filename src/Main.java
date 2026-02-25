@@ -11,6 +11,7 @@ public class Main {
             System.out.println("3. Play Until Reaching 100");
             System.out.println("4. Play Until Exact 100");
             System.out.println("5. Track Dice Rolls Until Win");
+            System.out.println("6. Play Two Player Match");
             System.out.println("8. EXIT");
 
             int choice = sc.nextInt();
@@ -32,7 +33,9 @@ public class Main {
                 case 5:
                     SnakeAndLadder.diceCountTrackingUseCase();
                     break;
-
+                case 6:
+                    SnakeAndLadder.twoPlayerGameUseCase();
+                    break;
                 case 8:
                     System.out.println("Exiting....");
                     return;
@@ -40,7 +43,6 @@ public class Main {
                     System.out.println("Invalid choice");
             }
         }
-
 
     }
 }

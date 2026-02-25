@@ -47,7 +47,8 @@ public class SnakeAndLadder {
 
     public static void exactHundredUseCase(){
         int position =0;
-        while(position !=100){
+        while(position !=100)
+        {
             int dice =rollDice();
             int option =getGameOption();
             int old=position;
@@ -75,6 +76,32 @@ public class SnakeAndLadder {
             System.out.println("ROll "+rollCount+" : Dice= "+dice+" Position= "+position);
         }
         System.out.println("Total Dice Rolls: "+rollCount);
+    }
+    public static void twoPlayerGameUseCase(){
+        int p1 =0,p2=0,turn=1;
+
+        while(p1 !=100 && p2 !=100)
+        {
+            int dice = rollDice();
+            int option = getGameOption();
+
+            if (turn == 1)
+            {
+                int old = p1;
+                p1 = updatePlayerPosition(p1, dice, option);
+                if (p1 > 100) p1 = old;
+                if (option != LADDER) turn = 2;
+            }
+            else
+            {
+                int old = p2;
+                p2 = updatePlayerPosition(p2, dice, option);
+                if (p2 > 100) p2 = old;
+                if (option != LADDER) turn = 1;
+            }
+
+        }
+        System.out.println(p1 == 100 ? "Player 1 Wins!" : "Player 2 Wins!");
     }
 
 }
