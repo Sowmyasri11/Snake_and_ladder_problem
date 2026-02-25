@@ -61,4 +61,20 @@ public class SnakeAndLadder {
         System.out.println("Player reached EXACT position 100!");
     }
 
+    public static void diceCountTrackingUseCase(){
+        int position =0,rollCount =0;
+        while(position!= 100){
+            rollCount++;
+            int dice =rollDice();
+            int option =getGameOption();
+            int old=position;
+            position =updatePlayerPosition(position,dice,option);
+            if(position > 100) {
+                position = old;
+            }
+            System.out.println("ROll "+rollCount+" : Dice= "+dice+" Position= "+position);
+        }
+        System.out.println("Total Dice Rolls: "+rollCount);
+    }
+
 }
