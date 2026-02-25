@@ -45,4 +45,20 @@ public class SnakeAndLadder {
 
     }
 
+    public static void exactHundredUseCase(){
+        int position =0;
+        while(position !=100){
+            int dice =rollDice();
+            int option =getGameOption();
+            int old=position;
+
+            position =updatePlayerPosition(position,dice,option);
+
+            if(position > 100) {
+                position = old;
+            }
+        }
+        System.out.println("Player reached EXACT position 100!");
+    }
+
 }
